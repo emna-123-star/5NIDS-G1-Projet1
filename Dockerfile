@@ -5,10 +5,10 @@ FROM openjdk:11-jdk-slim
 WORKDIR /app
 
 # Copy the application JAR file from the target directory into the container
-COPY target/achat-1.0.jar achat.jar
+COPY target/gestion-station-ski-1.0.jar gestion-station-ski.jar
 
 # Expose a port (change the port number if necessary)
 EXPOSE 8080
 
 # Define the command to run the application when the container starts
-CMD ["java", "-jar", "achat.jar"]
+CMD ["java", "-jar", "gestion-station-ski.jar"]
