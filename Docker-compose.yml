@@ -1,32 +1,25 @@
 version: '2'
-services:
-  # MySQL Database
-  mysqldb:
-    image: mysql
-    container_name: mysqldb
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: stationSki
-    ports:
-      - "3306:3306"
-    volumes:
-      - dockerAngularSpringDatabaseData:/var/lib/mysql
-    networks:
-      - back
 
-  # Spring Boot Backend
-  spring-backend:
-    build:
-      context: ./
+services:
+  5NIDS2-G1-Projet1-backend:
+    image: aymensarbeji/gestion-station-ski-1.0
     ports:
-      - "8082:8082"
+      - 6868:8089
+    stdin_open: true
+    tty: true
+    volumes:
+      - test:/root/.m2
     depends_on:
       - mysqldb
-    networks:
-      - back
+  mysqldb:
+    image: mysql:5.7
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=stationSki
+    ports:
+      - 3306:3306
+    volumes:
+      - db:/var/lib/mysql
 volumes:
-  dockerAngularSpringDatabaseData:
-
-networks:
-  back:
-
+  db:
+  test:
