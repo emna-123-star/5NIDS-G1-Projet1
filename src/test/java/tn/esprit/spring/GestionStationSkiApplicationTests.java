@@ -6,20 +6,23 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @TestMethodOrder(OrderAnnotation.class)
-class GestionStationSkiApplicationTests {
+public class GestionStationSkiApplicationTests {
 	@Autowired
-	IUserService us;
+	private MonService monService;
+
+	@Autowired
+	private TestRestTemplate restTemplate;
+
 	@Test
-	@Order(1)
-	public void testRetrieveAllUsers() {
-		List<User> listUsers = us.retrieveAllUsers();
-		Assertions.assertEquals(0, listUsers.size());
+	public void testMethodeDeService() {
+		// Écrivez votre test ici
+		String resultat = monService.maMethode();
+		assertEquals("Résultat attendu", resultat);
 	}
 	void contextLoads() {
 	}
