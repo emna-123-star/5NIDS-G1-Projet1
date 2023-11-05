@@ -1,24 +1,31 @@
-version: '2'
+version: '3'
 services:
-  sonarqube:
-    image: sonarqube
+  # MySQL Database
+  mysqldb:
+    image: mysql
+    container_name: mysqldb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: stationSki
     ports:
-      - "9000:9000"
-      - "9092:9092"
+      - 3306:3306
     volumes:
-      - SonarQube_data:/opt/SonarQube/data
-      - SonarQube_extensions:/opt/SonarQube/extensions
-      - SonarQube_logs:/opt/SonarQube/logs
+      - dockerAngularSpringDatabaseData:/var/lib/mysql
+    networks:
+      - back
 
-
-  nexus:
-    image: sonatype/nexus3
+  # Spring Boot Backend
+  spring-backend:
+    build:
+      context: ./
     ports:
-      - "8081:8081"
-    volumes:
-      - nexus-data:/nexus-data
+      - "8082:8082"
+    depends_on:
+      - mysqldb
+    networks:
+      - back
 volumes:
-  nexus_data:
-  SonarQube_data:
-  SonarQube_extensions:
-  SonarQube_logs:
+  dockerAngularSpringDatabaseData:
+
+networks:
+  back:
