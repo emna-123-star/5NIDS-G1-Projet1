@@ -1,7 +1,9 @@
 FROM openjdk:8-jdk-alpine
-EXPOSE 8082
+EXPOSE 8089
 ADD target/gestion-station-ski-1.0.jar gestion-station-ski-1.0.jar
 ENTRYPOINT ["java","-jar","/gestion-station-ski-1.0.jar"]
+
+
 # Use an official Java 11 runtime as a parent image
 #FROM openjdk:8-jdk-slim
 # Set the working directory inside the container
@@ -15,6 +17,8 @@ ENTRYPOINT ["java","-jar","/gestion-station-ski-1.0.jar"]
 
 # Define the command to run the application when the container starts
 #CMD ["java", "-jar", "gestion-station-ski.jar"]
+
+
 #FROM openjdk:11
 #EXPOSE 8082
 #ADD target/gestion-station-ski-1.0.jar gestion-station-ski-1.0.jar
