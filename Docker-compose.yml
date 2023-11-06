@@ -4,7 +4,7 @@ services:
   5NIDS2-G1-Projet1-backend:
     image: aymensarbeji/gestion-station-ski-1.0
     ports:
-      - 6868:8089
+      - 8089:8089
     stdin_open: true
     tty: true
     volumes:
