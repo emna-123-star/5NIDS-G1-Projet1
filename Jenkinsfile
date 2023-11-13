@@ -10,7 +10,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Récupération du code source depuis le référentiel Git
-                git url: 'https://url-de-votre-referentiel-git.git'
+                git url: 'https://github.com/emna-123-star/5NIDS2-G1-Projet1.git'
             }
         }
 
