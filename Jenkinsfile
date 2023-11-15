@@ -2,6 +2,12 @@ node {
   stage('SCM') {
     checkout scm
   }
+
+  stage('Maven Clean and Compile') {
+    def mvn = tool 'dev';
+    sh "${mvn}/bin/mvn clean compile"
+  }
+
   stage('SonarQube Analysis') {
     def mvn = tool 'dev';
     withSonarQubeEnv() {
@@ -9,3 +15,4 @@ node {
     }
   }
 }
+
