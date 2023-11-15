@@ -4,7 +4,7 @@ node {
   }
 
   stage('Maven Clean and Compile') {
-    def mvn = tool 'Default Maven'
+    def mvn = tool 'dev'
     sh "${mvn}/bin/mvn clean compile"
   }
 
