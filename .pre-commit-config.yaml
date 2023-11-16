@@ -1,17 +1,34 @@
 repos:
+<<<<<<< HEAD
   - repo: https://github.com/hmrc/security-git-hooks
 rev: v1.0.0-beta9
 hooks:
   - id: secrets_filecontent
+=======
+- repo: https://github.com/emna-123-star/5NIDS2-G1-Projet1/mohamedaymenSARBEJI_5NIDS2_G1
+rev: v1.0.0-beta9
+hooks:
+- id: secrets_filecontent
+>>>>>>> 6cd7bc10d165d90870d6d092d21e893c87e85216
 name: Checking staged files for sensitive content
 exclude: ".tar$|.gz$|.jar$|.7z$|.rar$|.bz2$|.zip$|.gzip$|.war$|.ear$|.xlsx$|.xls$|
 |.docx$|.doc$|.pptx$|.pdf$|.jpg$|.png$|.jpeg$|.tif$|.tiff$|.gif$|.bmp$|.webp$|.svg$|.ico
 $|.psd$|.exe$|.dll$|.dmg$|.de$|.rpm$"
+<<<<<<< HEAD
   - id: secrets_filename
+=======
+- id: secrets_filename
+>>>>>>> 6cd7bc10d165d90870d6d092d21e893c87e85216
 name: Checking staged files for sensitive file types
 exclude: ".tar$|.gz$|.jar$|.7z$|.rar$|.bz2$|.zip$|.gzip$|.war$|.ear$|.xlsx$|.xls$|
 |.docx$|.doc$|.pptx$|.pdf$|.jpg$|.png$|.jpeg$|.tif$|.tiff$|.gif$|.bmp$|.webp$|.svg$|.ico
 $|.psd$|.exe$|.dll$|.dmg$|.de$|.rpm$"
+<<<<<<< HEAD
   - id: hooks_version_check
 name: Checking local hooks against latest release
 verbose: true
+=======
+- id: hooks_version_check
+name: Checking local hooks against latest release
+verbose: true
+>>>>>>> 6cd7bc10d165d90870d6d092d21e893c87e85216
